@@ -15,12 +15,20 @@
             <form action="#" th:action="@{/save}" th:object="${gruz}" method="post">
                 <table>
                     <tr>
+                        <td>Id груза:</td>
+                        <td><input type="text" th:field="*{id}" readonly="readonly"></td>
+                    </tr>
+                    <tr>
                         <td>Имя груза:</td>
                         <td><input type="text" th:field="*{gruzName}" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>Содержимое груза:</td>
                         <td><input type="text" th:field="*{gruzInsides}"></td>
+                    </tr>
+                    <tr>
+                        <td>Город отбытия:</td>
+                        <td><input type="text" th:field="*{cityDeparture}"></td>
                     </tr>
                     <tr>
                         <td>Дата отбытия:</td>

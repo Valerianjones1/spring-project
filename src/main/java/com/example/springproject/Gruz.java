@@ -15,6 +15,8 @@ public class Gruz {
     private LocalDate departureDate;
     private String cityArrival;
     private LocalDate arrivalDate;
+    private String cityDeparture;
+
 
     protected Gruz() {
     }
@@ -65,9 +67,28 @@ public class Gruz {
         return this.arrivalDate;
     }
 
+    public String getCityDeparture() {
+        return cityDeparture;
+    }
+
+    public void setCityDeparture(String cityDeparture) {
+        this.cityDeparture = cityDeparture;
+    }
+
     public void setArrivalDate(LocalDate arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
 
-
+    @Override
+    public String toString() {
+        return "Gruz{" +
+                "id=" + id +
+                ", gruzName='" + gruzName + '\'' +
+                ", gruzInsides='" + gruzInsides + '\'' +
+                ", departureDate=" + departureDate +
+                ", cityArrival='" + cityArrival + '\'' +
+                ", arrivalDate=" + arrivalDate +
+                ", cityDeparture='" + cityDeparture + '\'' +
+                '}';
+    }
 }
