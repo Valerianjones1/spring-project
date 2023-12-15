@@ -15,8 +15,6 @@ import java.time.LocalDate;
 @ToString
 @Table(name = "gruz")
 public class Gruz {
-    final static String ERROR_MESSAGE = "Данное поле не может быть пустым.";
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
