@@ -1,0 +1,8 @@
+version: "3"
+services:
+  # Сервис для Spring Boot приложения
+  springboot-app:
+    image: springboot-app
+    build: .
+    ports:
+      - 8080:8080
