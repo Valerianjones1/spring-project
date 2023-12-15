@@ -30,30 +30,44 @@
                     <tr>
                         <td>Id груза:</td>
                         <td><input type="text" th:field="*{id}" readonly="readonly"></td>
+                        <td><p style="color:red" th:if="${#fields.hasErrors('id')}" th:errorclass="error"
+                               th:errors="*{id}"></p></td>
                     </tr>
                     <tr>
                         <td>Имя груза:</td>
                         <td><input type="text" th:field="*{gruzName}" readonly="readonly"></td>
+                        <td><p style="color:red" th:if="${#fields.hasErrors('gruzName')}" th:errorclass="error"
+                               th:errors="*{gruzName}"></p></td>
                     </tr>
                     <tr>
                         <td>Содержимое груза:</td>
                         <td><input type="text" th:field="*{gruzInsides}"></td>
+                        <td><p style="color:red" th:if="${#fields.hasErrors('gruzInsides')}" th:errorclass="error"
+                               th:errors="*{gruzInsides}"></p></td>
                     </tr>
                     <tr>
                         <td>Город отбытия:</td>
                         <td><input type="text" th:field="*{cityDeparture}"></td>
+                        <td><p style="color:red" th:if="${#fields.hasErrors('cityDeparture')}" th:errorclass="error"
+                               th:errors="*{cityDeparture}"></p></td>
                     </tr>
                     <tr>
                         <td>Дата отбытия:</td>
                         <td><input type="text" th:field="*{departureDate}"></td>
+                        <td><p style="color:red" th:if="${#fields.hasErrors('departureDate')}" th:errorclass="error"
+                               th:errors="*{departureDate}"></p></td>
                     </tr>
                     <tr>
                         <td>Город прибытия:</td>
                         <td><input type="text" th:field="*{cityArrival}"></td>
+                        <td><p style="color:red" th:if="${#fields.hasErrors('cityArrival')}" th:errorclass="error"
+                               th:errors="*{cityArrival}"></p></td>
                     </tr>
                     <tr>
                         <td>Дата прибытия:</td>
                         <td><input type="text" th:field="*{arrivalDate}"></td>
+                        <td><p style="color:red" th:if="${#fields.hasErrors('arrivalDate')}" th:errorclass="error"
+                               th:errors="*{arrivalDate}"></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">
