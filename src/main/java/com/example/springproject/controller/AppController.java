@@ -1,16 +1,12 @@
 package com.example.springproject.controller;
 
-import java.security.Principal;
-import java.util.List;
-
 import com.example.springproject.dto.UserDto;
 import com.example.springproject.entity.Gruz;
 import com.example.springproject.entity.User;
 import com.example.springproject.service.GruzService;
 import com.example.springproject.service.UserService;
-import com.example.springproject.service.UserServiceImpl;
 import jakarta.validation.Valid;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -19,17 +15,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
+@RequiredArgsConstructor
 public class AppController {
-    @Autowired
-    private GruzService gruzService;
 
-    private UserService userService;
+    private final GruzService gruzService;
 
-    public AppController(GruzService gruzService, UserService userService) {
-        this.gruzService = gruzService;
-        this.userService = userService;
-    }
+    private final UserService userService;
 
     @GetMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {

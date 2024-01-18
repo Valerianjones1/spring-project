@@ -5,26 +5,19 @@ import com.example.springproject.entity.Role;
 import com.example.springproject.entity.User;
 import com.example.springproject.repository.RoleRepository;
 import com.example.springproject.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    private UserRepository userRepository;
-    private RoleRepository roleRepository;
-    private PasswordEncoder passwordEncoder;
-
-    public UserServiceImpl(UserRepository userRepository,
-                           RoleRepository roleRepository,
-                           PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public void saveUser(UserDto userDto) {
@@ -35,10 +28,10 @@ public class UserServiceImpl implements UserService {
 
         Role role = roleRepository.findByName("ROLE_USER");
         if (role == null) {
-            role = chechRoleExists();
+            role = checkRoleExists();
         }
 
-        user.setRoles(Arrays.asList(role));
+        user.setRoles(List.of(role));
         userRepository.save(user);
     }
 
@@ -68,7 +61,7 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    private Role chechRoleExists() {
+    private Role checkRoleExists() {
         Role role = new Role();
         role.setName("ROLE_USER");
         return roleRepository.save(role);
