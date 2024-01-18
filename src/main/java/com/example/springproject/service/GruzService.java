@@ -2,15 +2,16 @@ package com.example.springproject.service;
 
 import com.example.springproject.entity.Gruz;
 import com.example.springproject.repository.GruzRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class GruzService {
-    @Autowired
-    private GruzRepository repo;
+    private final GruzRepository repo;
 
     public List<Gruz> listAll(String keyword) {
         if (keyword != null) {

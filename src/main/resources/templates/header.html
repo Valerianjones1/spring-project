@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,9 +101,9 @@
             <li><a href="/blog">Blog</a></li>
             <!-- Если пользователь вошел в систему, показать дополнительные пункты меню -->
             <li><a href="/profile">Profile</a></li>
-            <li><a href="/logout">Logout</a></li>
-            <!-- Если пользователь не вошел в систему, показать пункты для входа и регистрации -->
-            <li><a href="/login">Login</a></li>
+            <li sec:authorize="isAnonymous()"><a class="nav-link" href="/login">Login</a></li>
+            <li sec:authorize="isAuthenticated()"><a class="nav-link" href="/logout">Logout</a></li>
+            <li sec:authorize="isAuthenticated()">Welcome, <span sec:authentication="name"></span></li>
             <li><a href="/register">Register</a></li>
             <!-- Другие элементы навигации -->
         </ul>

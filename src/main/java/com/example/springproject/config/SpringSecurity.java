@@ -1,5 +1,6 @@
 package com.example.springproject.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +15,9 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SpringSecurity {
-    @Autowired
-    UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
 
     @Bean
     public static PasswordEncoder passwordEncoder() {
@@ -35,14 +36,23 @@ public class SpringSecurity {
                                 .requestMatchers("/save").hasRole("USER")
                                 .requestMatchers("/delete/{id}").hasRole("USER")
                                 .requestMatchers("/users").hasRole("ADMIN")
-                ).formLogin(
+
+                ).authorizeHttpRequests((authorize)->
+                        authorize.requestMatchers("/blog/**").permitAll()
+                        .requestMatchers("/blog/save").permitAll()
+                        .requestMatchers("/blog/new").permitAll()
+                        .requestMatchers("/blog/edit/{id}").permitAll()
+                        .requestMatchers("/blog/delete/{id}").permitAll())
+                .formLogin(
                         form -> form
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
+                                .defaultSuccessUrl("/", true)
                                 .permitAll()
                 ).logout(
                         logout -> logout
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                                .logoutSuccessUrl("/")
                                 .permitAll()
                 );
         return http.build();
