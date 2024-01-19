@@ -104,7 +104,7 @@
             <li sec:authorize="isAnonymous()"><a class="nav-link" href="/login">Login</a></li>
             <li sec:authorize="isAuthenticated()"><a class="nav-link" href="/logout">Logout</a></li>
             <li sec:authorize="isAuthenticated()">Welcome, <span sec:authentication="name"></span></li>
-            <li><a href="/register">Register</a></li>
+            <li sec:authorize="isAnonymous()"><a class="nav-link" href="/register">Register</a></li>
             <!-- Другие элементы навигации -->
         </ul>
     </nav>
