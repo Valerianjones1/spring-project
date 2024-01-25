@@ -5,17 +5,16 @@
     <title>Система работы с грузами</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
     <style>
         .bg-image{
-            background-image: url('https://i.pinimg.com/originals/f6/65/d8/f665d8dabf26bb246c5e2f7b50c6c613.jpg');
+            background-color: #F3F3F5;
             background-size: cover;
             height: 100vh;
             overflow: auto;
         }
         h1 {
-            color: rgba(0, 5, 125, 1); /* Цвет текста */
-            text-shadow: 1px 1px 2px rgb(0, 5, 125);
+            color: black; /* Цвет текста */
             font-family: 'Noto Sans', sans-serif; /* Шрифт */
             font-size: 24px; /* Размер шрифта */
             text-align: center; /* Выравнивание текста по центру */
@@ -23,7 +22,7 @@
             font-weight: bold;
         }
         h4 {
-            color: rgba(0, 5, 125, 1); /* Цвет текста */
+            color: black; /* Цвет текста */
             font-family: 'Noto Sans', sans-serif; /* Шрифт */
             font-size: 20px; /* Размер шрифта */
             text-align: left; /* Выравнивание текста по центру */
@@ -31,12 +30,55 @@
             margin-top: 20px;
         }
         .btn {
-            padding: 8px 12px;
+            padding: 6px 9px;
             margin-right: 5px;
         }
-        .btn-custome-search {
 
+        .btn-info {
+            background-color: #484FF3;
+            color: #fff;
+            border: 2px solid #484FF3;
         }
+        .btn-info:hover {
+            background-color: #fff;
+            color: #484FF3;
+            border: 2px solid #484FF3;
+        }
+        .btn-danger {
+            background-color: #d43f3a;
+            color: #fff;
+            border: 2px solid #d43f3a;
+        }
+
+        .btn-danger:hover {
+            background-color: #fff;
+            color: #d43f3a;
+            border: 2px solid #d43f3a;
+        }
+
+        .btn-custome-search{
+            background-color: #484FF3;
+            color: #fff;
+            border: 2px solid #484FF3;
+        }
+
+        .btn-custome-search:hover {
+            background-color: #fff;
+            color: #484FF3;
+            border: 2px solid #484FF3;
+        }
+        .btn-custome-clear{
+            background-color: #d43f3a;
+            color: #fff;
+            border: 2px solid #d43f3a;
+        }
+
+        .btn-custome-clear:hover {
+            background-color: #fff;
+            color: #d43f3a;
+            border: 2px solid #d43f3a;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -53,83 +95,32 @@
             color: black;
         }
 
-        tr:hover {
-            background-color:rgba(0, 5, 125, 1);
+        .tr-special:hover {
+            background-color: #E8E8F6;
         }
 
         .table-custome {
-            background-color:rgba(0, 5, 125, 0.5);
+            background-color: #BEBECA;
             margin-top: 10px;
         }
         .text-custome {
             font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.7);
         }
 
-        .btn-info {
-            background-color: #5bc0de;
-            color: #fff;
-            border: 1px solid #46b8da;
-        }
-
-        .btn-danger {
-            background-color: #d9534f;
-            color: #fff;
-            border: 1px solid #d43f3a;
-        }
-
-        .text-white {
-            color: #fff;
+        .text-custome {
+            color: black;
         }
         .text-black {
             color: black;
             text-align: center;
         }
-        .custom-search-button{
-            background-color: #4CAF50;
-            color: red;
-        }
-        .custom-clear-button {
-            background-color: #f44336;
-            color: white;
-        }
-        .custom-table {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-        /* Обнуляем отступ и поля для списка */
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
 
-        /* Стили для пунктов списка */
-        li {
-            display: inline-block;
-            margin-right: 15px;
-        }
-
-        /* Стили для ссылок-кнопок */
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            text-decoration: none;
-            background-color: #3498db;
-            color: #fff;
-            border-radius: 5px;
-            border: 1px solid #2980b9;
-        }
-
-        /* При наведении курсора */
-        a:hover {
-            background-color: #2980b9;
-        }
-
-        /* Стили для формы логина */
+        /* Стили для формы логина}*/
         form {
             display: inline-block;
             margin-right: 15px;
         }
+        form-custome
 
         /* Стили для текстовых полей формы */
         input[type="text"],
@@ -137,6 +128,36 @@
             padding: 8px;
             margin-right: 8px;
         }
+        body {
+            overflow-x: hidden;
+            margin: 0 auto;
+        }
+        .header-custome {
+            width: 100%;
+            box-sizing: border-box; /* Учитываем padding и border в общей ширине элемента */
+        }
+
+        .header-custome ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            background-color: black;
+            justify-content: space-around;
+        }
+
+        .header-custome li {
+            margin-right: 10px;
+        }
+
+        .header-custome li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .header-custome li:nth-child(3) {
+            margin-left: auto;
 
     </style>
 </head>
@@ -148,9 +169,9 @@
         <div class="col-md-8 offset-md-4">
             <h4>Поиск груза по любому критерию:</h4>
             <form th:action="@{/}">
-                <input type="text" name="keyword" id="keyword" size="70" th:value="${keyword}" required/>
+                <input class="form-custome" type="text" name="keyword" id="keyword" size="70" th:value="${keyword}" required/>
                 <input type="submit" class="btn btn-success btn-sm btn-custome-search" value="Поиск"/>
-                <input type="button" class="btn btn-warning btn-sm" value="Очистить" id="btnClear"
+                <input type="button" class="btn btn-warning btn-sm btn-custome-clear" value="Очистить" id="btnClear"
                        onclick="clearSearch()"/>
             </form>
             <select id="sortSelect" onchange="sortTable()">
@@ -172,14 +193,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="gruz: ${listGruzs}">
-            <th scope="row" class="text-white" th:text="${gruz.id}">ID груза отстутсвует</th>
-            <th scope="row" class="text-white" th:text="${gruz.gruzName}">Имя груза отсутствует</th>
-            <th scope="row" class="text-white" th:text="${gruz.gruzInsides}">Содержимое груза отсутствует</th>
-            <th scope="row" class="text-white" th:text="${gruz.cityDeparture}">Город отправки отсутствует</th>
-            <th id="test" scope="row" class="text-white" th:text="${gruz.departureDate}">Дата отправки отсутствует</th>
-            <th scope="row" class="text-white" th:text="${gruz.cityArrival}">Город прибытия отсутствует</th>
-            <th scope="row" class="text-white" th:text="${gruz.arrivalDate}">Дата прибытия отсутствует</th>
+        <tr th:each="gruz: ${listGruzs}" class="tr-special">
+            <th scope="row" class="text-custome" th:text="${gruz.id}">ID груза отстутсвует</th>
+            <th scope="row" class="text-custome" th:text="${gruz.gruzName}">Имя груза отсутствует</th>
+            <th scope="row" class="text-custome" th:text="${gruz.gruzInsides}">Содержимое груза отсутствует</th>
+            <th scope="row" class="text-custome" th:text="${gruz.cityDeparture}">Город отправки отсутствует</th>
+            <th id="test" scope="row" class="text-custome" th:text="${gruz.departureDate}">Дата отправки отсутствует</th>
+            <th scope="row" class="text-custome" th:text="${gruz.cityArrival}">Город прибытия отсутствует</th>
+            <th scope="row" class="text-custome" th:text="${gruz.arrivalDate}">Дата прибытия отсутствует</th>
             <td>
                 <a th:href="@{'/edit/'+${gruz.id}}"><button type="button" class="btn btn-info">Редактировать</button></a>
                 <a th:href="@{'/delete/'+${gruz.id}}"><button type="button" class="btn btn-danger">Удалить</button></a>
@@ -202,7 +223,7 @@
     </p>
     <blockquote class="blockquote text-center">
         <a href="/new">
-            <button type="button" class="btn btn-primary" data-togge="button" aria-pressed="false" autocomplete="off">
+            <button type="button" class="btn btn-primary btn-custome-search" data-togge="button" aria-pressed="false" autocomplete="off">
                 Добавить груз
             </button>
         </a>
@@ -294,8 +315,8 @@
                 datasets: [{
                     label: 'Количество грузов',
                     data: Object.values(cargoData),
-                    backgroundColor: 'rgba(0, 5, 125, 1)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: '#484FF3',
+                    borderColor: 'rgba(72,140,243,0.49)',
                     borderWidth: 1
                 }]
             },

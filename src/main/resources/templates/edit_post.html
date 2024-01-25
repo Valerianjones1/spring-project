@@ -13,27 +13,54 @@
             text-align: center; /* Выравнивание текста по центру */
             margin-top: 20px;
         }
-        .bg-image {
-            background-image: url('https://i.pinimg.com/originals/f6/65/d8/f665d8dabf26bb246c5e2f7b50c6c613.jpg');
+        .bg-image{
+            background-color: #F3F3F5;
             background-size: cover;
             height: 100vh;
             overflow: auto;
         }
+        .header-custome {
+            width: 100%;
+            box-sizing: border-box; /* Учитываем padding и border в общей ширине элемента */
+        }
+
+        .header-custome ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            background-color: black;
+            justify-content: space-around;
+        }
+
+        .header-custome li {
+            margin-right: 10px;
+        }
+
+        .header-custome li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .header-custome li:nth-child(3) {
+            margin-left: auto;
     </style>
 </head>
 <body>
 <div class="bg-image">
+    <div th:replace="header :: header"></div>
     <blockquote class="blockquote text-center"><h1>Редактирование поста</h1></blockquote>
     <div class="row">
         <div class="col-md-8 offset-md-4">
             <form action="#" th:action="@{/blog/save}" th:object="${post}" method="post">
                 <table>
-                    <tr>
+                    <!-- <tr>
                         <td>Id поста:</td>
                         <td><input type="text" th:field="*{id}" readonly="readonly"></td>
                         <td><p style="color:red" th:if="${#fields.hasErrors('id')}" th:errorclass="error"
                                th:errors="*{id}"></p></td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td>Имя поста:</td>
                         <td><input type="text" th:field="*{header}"></td>
@@ -42,7 +69,9 @@
                     </tr>
                     <tr>
                         <td>Тело поста:</td>
-                        <td><input type="text" th:field="*{body}"></td>
+                        <td>
+                            <textarea  th:field="*{body}" rows="5" cols="80"></textarea>
+                        </td>
                         <td><p style="color:red" th:if="${#fields.hasErrors('body')}" th:errorclass="error"
                                th:errors="*{body}"></p></td>
                     </tr>

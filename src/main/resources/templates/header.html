@@ -7,20 +7,20 @@
     <!-- Ваши стили CSS здесь -->
     <link rel="stylesheet" href="/css/style.css">
     <style>
-        /* Обнуляем отступ и поля для списка */
+        /* Обнуляем отступ и поля для списка
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
 
-        /* Стили для пунктов списка */
+        /* Стили для пунктов списка
         li {
             display: inline-block;
             margin-right: 15px;
         }
 
-        /* Стили для ссылок-кнопок */
+        /* Стили для ссылок-кнопок
         a {
             display: inline-block;
             padding: 10px 20px;
@@ -31,37 +31,37 @@
             border: 1px solid #2980b9;
         }
 
-        /* При наведении курсора */
+        /* При наведении курсора
         a:hover {
             background-color: #2980b9;
         }
 
-        /* Стили для формы логина */
+        /* Стили для формы логина
         form {
             display: inline-block;
             margin-right: 15px;
         }
 
-        /* Стили для текстовых полей формы */
+        /* Стили для текстовых полей формы
         input[type="text"],
         input[type="password"] {
             padding: 8px;
             margin-right: 8px;
         }
-        /* Обнуляем отступ и поля для списка */
+        /* Обнуляем отступ и поля для списка
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
 
-        /* Стили для пунктов списка */
+        /* Стили для пунктов списка
         li {
             display: inline-block;
             margin-right: 15px;
         }
 
-        /* Стили для ссылок-кнопок */
+        /* Стили для ссылок-кнопок
         a {
             display: inline-block;
             padding: 10px 20px;
@@ -72,18 +72,18 @@
             border: 1px solid #2980b9;
         }
 
-        /* При наведении курсора */
+        /* При наведении курсора
         a:hover {
             background-color: #2980b9;
         }
 
-        /* Стили для формы логина */
+        /* Стили для формы логина
         form {
             display: inline-block;
             margin-right: 15px;
         }
 
-        /* Стили для текстовых полей формы */
+        /* Стили для текстовых полей формы
         input[type="text"],
         input[type="password"] {
             padding: 8px;
@@ -94,23 +94,20 @@
 <body>
 
 <header>
-    <nav>
+    <nav class="header-custome">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/cargo-search">Cargo Search</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/" class="nav-link">Главная</a></li>
+            <li><a href="/blog" class="nav-link">Блог</a></li>
             <!-- Если пользователь вошел в систему, показать дополнительные пункты меню -->
-            <li><a href="/profile">Profile</a></li>
-            <li sec:authorize="isAnonymous()"><a class="nav-link" href="/login">Login</a></li>
-            <li sec:authorize="isAuthenticated()"><a class="nav-link" href="/logout">Logout</a></li>
-            <li sec:authorize="isAuthenticated()">Welcome, <span sec:authentication="name"></span></li>
-            <li sec:authorize="isAnonymous()"><a class="nav-link" href="/register">Register</a></li>
+
             <!-- Другие элементы навигации -->
+            <li sec:authorize="isAuthenticated()"><a class="nav-link" href="/users">Пользователи</a></li>
+            <li sec:authorize="isAnonymous()"><a class="nav-link" href="/register">Зарегистрироваться</a></li>
+            <li sec:authorize="isAnonymous()"><a class="nav-link" href="/login">Войти</a></li>
+            <li sec:authorize="isAuthenticated()"><a class="nav-link" href="/logout">Выйти</a></li>
         </ul>
     </nav>
 </header>
-
-<!-- Основной контент начинается здесь -->
 
 </body>
 </html>

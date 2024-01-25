@@ -8,14 +8,13 @@
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
     <style>
         .bg-image{
-            background-image: url('https://i.pinimg.com/originals/f6/65/d8/f665d8dabf26bb246c5e2f7b50c6c613.jpg');
+            background-color: #F3F3F5;
             background-size: cover;
             height: 100vh;
             overflow: auto;
         }
         h1 {
-            color: rgba(0, 5, 125, 1); /* Цвет текста */
-            text-shadow: 1px 1px 2px rgb(0, 5, 125);
+            color: black; /* Цвет текста */
             font-family: 'Noto Sans', sans-serif; /* Шрифт */
             font-size: 24px; /* Размер шрифта */
             text-align: center; /* Выравнивание текста по центру */
@@ -23,7 +22,7 @@
             font-weight: bold;
         }
         h4 {
-            color: rgba(0, 5, 125, 1); /* Цвет текста */
+            color: black; /* Цвет текста */
             font-family: 'Noto Sans', sans-serif; /* Шрифт */
             font-size: 20px; /* Размер шрифта */
             text-align: left; /* Выравнивание текста по центру */
@@ -31,146 +30,143 @@
             margin-top: 20px;
         }
         .btn {
-            padding: 8px 12px;
+            padding: 2px 10px;
             margin-right: 5px;
+            font-size: 10px;
         }
-        .btn-custome-search {
-
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
         th {
             color: black;
         }
-
-        tr:hover {
-            background-color:rgba(0, 5, 125, 1);
-        }
-
-        .table-custome {
-            background-color:rgba(0, 5, 125, 0.5);
-            margin-top: 10px;
-        }
-        .text-custome {
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-
-        .btn-info {
-            background-color: #5bc0de;
+        .btn-infoo {
+            padding: 4px 10px;
+            background-color: black;
             color: #fff;
-            border: 1px solid #46b8da;
+            border: 2px solid black;
+            margin-left: 50px;
         }
-
+        .btn-infoo:hover {
+            padding: 4px 10px;
+            background-color: #fff;
+            color: black;
+            border: 2px solid black;
+        }
+        .btn-infoi {
+            background-color: #484FF3;
+            color: #fff;
+            border: 1px solid #484FF3;
+            margin-left: 120px;
+            margin-bottom: 20px;
+        }
+        .btn-infoi:hover {
+            background-color: #fff;
+            color: #484FF3;
+            border: 1px solid #484FF3;
+        }
         .btn-danger {
-            background-color: #d9534f;
+            background-color: #d43f3a;
             color: #fff;
             border: 1px solid #d43f3a;
+            margin-bottom: 20px;
         }
 
-        .text-white {
-            color: #fff;
+        .btn-danger:hover {
+            background-color: #fff;
+            color: #d43f3a;
+            border: 1px solid #d43f3a;
+        }
+        .btn-z
+        {
+            background-color: #F3F3F5;
+            border: 1px solid #F3F3F5;
         }
         .text-black {
             color: black;
             text-align: center;
         }
-        .custom-search-button{
-            background-color: #4CAF50;
-            color: red;
+        .header-custome {
+            width: 100%;
+            box-sizing: border-box; /* Учитываем padding и border в общей ширине элемента */
         }
-        .custom-clear-button {
-            background-color: #f44336;
-            color: white;
-        }
-        .custom-table {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-        /* Обнуляем отступ и поля для списка */
-        ul {
-            list-style-type: none;
-            margin: 0;
+
+        .header-custome ul {
+            list-style: none;
             padding: 0;
+            margin: 0;
+            display: flex;
+            background-color: black;
+            justify-content: space-around;
         }
 
-        /* Стили для пунктов списка */
-        li {
-            display: inline-block;
-            margin-right: 15px;
+        .header-custome li {
+            margin-right: 10px;
         }
 
-        /* Стили для ссылок-кнопок */
-        a {
-            display: inline-block;
-            padding: 10px 20px;
+        .header-custome li a {
+            color: white;
             text-decoration: none;
-            background-color: #3498db;
-            color: #fff;
+            padding: 10px;
             border-radius: 5px;
-            border: 1px solid #2980b9;
+        }
+        .header-custome li:nth-child(3) {
+            margin-left: auto;
+        }
+        .otstup {
+            margin-left: 50px;
+            font-size: 34px;
+        }
+        .text-zagolovok {
+            text-align: left;
+            margin-left: 150px;
+            margin-top: 40px;
+            font-size: 24px; /* Размер шрифта */
+            font-weight: bold; /* Полужирное начертание */
+            color: #333;
         }
 
-        /* При наведении курсора */
-        a:hover {
-            background-color: #2980b9;
+        .text-telo {
+            text-align: left;
+            margin-left: 120px;
+            font-size: 19px;
         }
-
-        /* Стили для формы логина */
-        form {
-            display: inline-block;
-            margin-right: 15px;
-        }
-
-        /* Стили для текстовых полей формы */
-        input[type="text"],
-        input[type="password"] {
-            padding: 8px;
-            margin-right: 8px;
-        }
-
     </style>
 </head>
 <body>
-    <div class="bg-image">
-        <div th:replace="header :: header"></div>
-        <blockquote><h1>Посты</h1></blockquote>
-        <table id="1" class="table table-striped table-hover table-custome">
-            <thead>
-            <tr>
-                <th scope="col">ID поста</th>
-                <th scope="col">Заголовок поста</th>
-                <th scope="col">Тело поста</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="post: ${listPosts}">
-                <th scope="row" class="text-white" th:text="${post.id}">ID поста отстутсвует</th>
-                <th scope="row" class="text-white" th:text="${post.header}">Заголовок отсутствует</th>
-                <th scope="row" class="text-white" th:text="${post.body}">Тело отсутствует</th>
-                <td>
-                    <a th:href="@{'blog/edit/'+${post.id}}"><button type="button" class="btn btn-info">Редактировать</button></a>
-                    <a th:href="@{'blog/delete/'+${post.id}}"><button type="button" class="btn btn-danger">Удалить</button></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <blockquote class="blockquote text-center">
-            <a href="blog/new">
-                <button type="button" class="btn btn-primary" data-togge="button" aria-pressed="false" autocomplete="off">
-                    Добавить пост
-                </button>
-            </a>
-        </blockquote>
+<div class="bg-image">
+    <div th:replace="header :: header"></div>
+    <blockquote><h4 class="otstup">Главное за последнее время:</h4></blockquote>
+    <blockquote class="blockquote">
+        <a href="blog/new">
+            <button type="button" class="btn btn-infoo" data-toggle="button" aria-pressed="false" autocomplete="off">
+                Добавить пост
+            </button>
+        </a>
+    </blockquote>
+    <!-- Начало комментария: посты -->
+    <div th:each="post: ${listPosts}" class="post-container">
+        <div class="post">
+            <div class="col-md-8">
+            <!-- <p class="text-black" th:text="${'ID поста: ' + post.id}"></p> -->
+                <a href="sam_post.html">
+                    <button type="button" class="btn-z" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        <p class="text-black text-zagolovok" th:text="${post.header}"></p>
+                    </button>
+                </a>
+
+            <p class="text-black text-telo" th:text="${post.body}"></p>
+            </div>
+            <div class="col-md-8">
+                <a th:href="@{'blog/edit/'+${post.id}}">
+                    <button type="button" class="btn btn-infoi"> Редактировать </button>
+                </a>
+                <a th:href="@{'blog/delete/'+${post.id}}">
+                    <button type="button" class="btn btn-danger"> Удалить </button>
+                </a>
+            </div>
+        </div>
     </div>
+    <!-- Завершение комментария: посты -->
+
+
+</div>
 </body>
 </html>
