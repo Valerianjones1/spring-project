@@ -24,4 +24,6 @@ public class Post {
     @NotNull(message = "Содержимое тела не может быть null.")
     @NotBlank(message = "Содержимое тела не может быть пустым.")
     private String body;
+
+    private String author;
 }
